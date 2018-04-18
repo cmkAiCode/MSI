@@ -74,7 +74,7 @@ public class Stu_MainActivity extends AppCompatActivity implements ViewAnimator.
         getWindow().setEnterTransition(explode);
 
     }
-    //侧边栏功能条
+    //侧边栏   功能条
     private void createMenuList() {
         SlideMenuItem menuItem = new SlideMenuItem(TAG_CLOSE, R.drawable.test_home);
         list.add(menuItem);

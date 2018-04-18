@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         btGo = findViewById(R.id.bt_go);
         cv = findViewById(R.id.cv);
         fab = findViewById(R.id.fab);
+        cv.getBackground().setAlpha(10);//0~255透明度值 ，0为完全
     }
 
     private void setListener() {

@@ -74,6 +74,7 @@ public class Stu_MainActivity extends AppCompatActivity implements ViewAnimator.
         getWindow().setEnterTransition(explode);
 
     }
+    //侧边栏功能条
     private void createMenuList() {
         SlideMenuItem menuItem = new SlideMenuItem(TAG_CLOSE, R.drawable.test_home);
         list.add(menuItem);
@@ -87,6 +88,7 @@ public class Stu_MainActivity extends AppCompatActivity implements ViewAnimator.
         list.add(menuItem4);
     }
 
+    //设置ToolBar
     private void setActionBar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -95,7 +97,7 @@ public class Stu_MainActivity extends AppCompatActivity implements ViewAnimator.
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        drawerToggle = new ActionBarDrawerToggle(
+    drawerToggle = new ActionBarDrawerToggle(
                 this,                  /* host Activity */
                 drawerLayout,         /* DrawerLayout object */
                 /* nav drawer icon to replace 'Up' caret */

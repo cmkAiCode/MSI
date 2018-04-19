@@ -9,10 +9,12 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.transition.Explode;
+import android.transition.Transition;
+import android.transition.TransitionInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.LinearLayout;
 
@@ -48,8 +50,15 @@ public class Stu_MainActivity extends AppCompatActivity implements ViewAnimator.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.stu__main);
 
+//        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
+//        Transition slide_right = TransitionInflater.from(this).inflateTransition(android.R.transition.slide_right);
+//        getWindow().setEnterTransition(slide_right);
+
+        setContentView(R.layout.stu_main);
+        overridePendingTransition(R.anim.right_to_current,R.anim.current_stay_translate);
+
+        findViewById(R.id.toolbarback).getBackground().setAlpha(80);//0~255透明度值 ，0为完全
         Test_fragment fragmentOne = Test_fragment.newInstance();
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.content_frame, fragmentOne)
@@ -68,10 +77,6 @@ public class Stu_MainActivity extends AppCompatActivity implements ViewAnimator.
         createMenuList();
         viewAnimator = new ViewAnimator<>(this, list, fragmentOne, drawerLayout, this);
 
-        Explode explode = new Explode();
-        explode.setDuration(500);
-        getWindow().setExitTransition(explode);
-        getWindow().setEnterTransition(explode);
 
     }
     //侧边栏   功能条
@@ -82,7 +87,7 @@ public class Stu_MainActivity extends AppCompatActivity implements ViewAnimator.
         list.add(menuItem1);
         SlideMenuItem menuItem2 = new SlideMenuItem(TAG_NOTIFICATIONS, R.drawable.test_home);
         list.add(menuItem2);
-        SlideMenuItem menuItem3 = new SlideMenuItem(TAG_SETTINGS, R.drawable.test_home);
+        SlideMenuItem menuItem3 = new SlideMenuItem(TAG_SETTINGS, R  .drawable.test_home);
         list.add(menuItem3);
         SlideMenuItem menuItem4 = new SlideMenuItem(TAG_ABOUT, R.drawable.test_home);
         list.add(menuItem4);
@@ -152,7 +157,7 @@ public class Stu_MainActivity extends AppCompatActivity implements ViewAnimator.
             return true;
         }
         switch (item.getItemId()) {
-            case R.id.action_settings:
+            case R.id.action_home:
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -176,7 +181,7 @@ public class Stu_MainActivity extends AppCompatActivity implements ViewAnimator.
         SupportAnimator animator = ViewAnimationUtils.createCircularReveal(view, 0, topPosition, 0, finalRadius);
         animator.setInterpolator(new AccelerateInterpolator());
         animator.setDuration(ViewAnimator.CIRCULAR_REVEAL_ANIMATION_DURATION);
-        findViewById(R.id.content_overlay).setBackgroundDrawable(new BitmapDrawable(getResources(), screenShotable.getBitmap()));
+        //findViewById(R.id.content_overlay).setBackgroundDrawable(new BitmapDrawable(getResources(), screenShotable.getBitmap()));
         animator.start();
         Fragment fragment = null;
         switch (slideMenuItem.getName()){

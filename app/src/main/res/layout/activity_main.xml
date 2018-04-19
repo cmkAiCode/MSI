@@ -7,39 +7,18 @@
     android:background="@drawable/qwe"
     tools:context="cn.fanrunqi.materiallogin.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="68dp"
-        android:text="师 生 助 手"
-        android:fontFamily="Microsoft Yahei"
-        android:textColor="#f3201d56"
-        android:textSize="30sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="110dp"
-        android:text="Teacher and student assistant"
-        android:textColor="#cf221f58"
-        android:textSize="20sp" />
-
     <android.support.v7.widget.CardView
         android:id="@+id/cv"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="84dp"
+        android:layout_marginBottom="130dp"
         app:cardCornerRadius="6dp"
         app:cardElevation="3dp"
         app:cardUseCompatPadding="true"
-        >
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground">
 
         <LinearLayout
             android:layout_width="match_parent"

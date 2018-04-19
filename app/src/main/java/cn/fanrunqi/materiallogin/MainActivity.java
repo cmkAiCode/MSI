@@ -8,7 +8,10 @@ import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.transition.Explode;
+import android.transition.Transition;
+import android.transition.TransitionInflater;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        overridePendingTransition(R.anim.fade,R.anim.current_stay_translate);
         initView();
         setListener();
     }
@@ -44,13 +48,10 @@ public class MainActivity extends AppCompatActivity {
         btGo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Explode explode = new Explode();
-                explode.setDuration(500);
-                getWindow().setExitTransition(explode);
-                getWindow().setEnterTransition(explode);
-                ActivityOptionsCompat oc2 = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this);
+
+                //ActivityOptionsCompat oc2 = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this);
                 Intent i2 = new Intent(MainActivity.this,Stu_MainActivity.class);
-                startActivity(i2, oc2.toBundle());
+                startActivity(i2);
             }
         });
         fab.setOnClickListener(new View.OnClickListener() {

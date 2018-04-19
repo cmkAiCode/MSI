@@ -8,12 +8,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity">
+        <!--欢迎界面-->
+        <activity android:name=".Start_Interface"
+            android:theme="@style/AppTheme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <!--主界面-->
+        <activity android:name=".MainActivity">
+
         </activity>
          <!--注册页面-->
         <activity

@@ -20,7 +20,7 @@ public class Start_Interface extends Activity {
                 Start_Interface.this.startActivity(mainIntent);
                 Start_Interface.this.finish();
             }
-        },3000);
+        },2600);
 
     }
 

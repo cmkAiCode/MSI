@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/qwe"
+    android:background="@drawable/xuancai3"
     tools:context="cn.fanrunqi.materiallogin.MainActivity">
 
     <android.support.v7.widget.CardView
@@ -59,7 +59,7 @@
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColorHint="#c5c5c5">
+                    android:textColorHint="#545454">
 
                     <EditText
                         android:id="@+id/et_username"
@@ -85,7 +85,7 @@
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColorHint="#c5c5c5">
+                    android:textColorHint="#545454">
 
                     <EditText
                         android:id="@+id/et_password"
@@ -114,7 +114,7 @@
                     android:background="@drawable/bt_shape"
                     android:stateListAnimator="@drawable/state_list_animator_z"
                     android:text="@string/go"
-                    android:textColor="#d3d3d3"></Button>
+                    android:textColor="#545454"></Button>
             </RelativeLayout>
 
             <TextView

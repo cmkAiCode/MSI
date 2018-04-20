@@ -70,6 +70,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
+                    android:maxLength="11"
                     android:background="@drawable/selector_bg_edit"
                     android:textCursorDrawable="@drawable/bg_input_cursor"
                     android:paddingBottom="2dp"
@@ -94,6 +95,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textPassword"
+                        android:maxLength="15"
                         android:background="@drawable/selector_bg_edit"
                         android:textCursorDrawable="@drawable/bg_input_cursor"
                         android:paddingBottom="2dp"
@@ -117,6 +119,7 @@
                 </Button>
             </RelativeLayout>
             <TextView
+                android:id="@+id/tv_findPWD"
                 android:layout_marginTop="5dp"
                 android:layout_gravity="center_horizontal"
                 android:textColor="#9a9a9a"

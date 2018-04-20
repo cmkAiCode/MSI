@@ -33,6 +33,12 @@ import yalantis.com.sidemenu.util.ViewAnimator;
 public class Stu_MainActivity extends AppCompatActivity implements ViewAnimator.ViewAnimatorListener{
 
 
+    final int SERVER_WRONG = -1;//服务器错误
+    final int STATE_PASSWORDWORNG = 0;//密码错误
+    final int STATE_NOID = 1;//没有该学号或工号
+    final int STATE_TELEXITS = 2;//手机号已被注册
+    final int STATE_IDEXITS = 3;//学号或工号已被注册
+
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
     private List<SlideMenuItem> list = new ArrayList<>();

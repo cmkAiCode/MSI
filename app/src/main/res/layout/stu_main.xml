@@ -3,42 +3,61 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer_layout"
+    android:background="@drawable/qwe"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
 
     <io.codetail.widget.RevealFrameLayout
         android:id="@+id/conteiner_frame"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:id="@+id/content_overlay"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/background"
-            android:orientation="vertical"/>
+            android:orientation="vertical" />
         <LinearLayout
             android:id="@+id/content_frame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_marginTop="55dp"/>
+            android:layout_marginTop="75dp"/>
 
+        <android.support.v7.widget.CardView
+            android:id="@+id/toolbarback"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="2dp"
+            app:cardUseCompatPadding="true"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground">
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/toolbar_color"
             android:gravity="center"
-            android:paddingTop="10dp"
-            >
-            <ImageView
+            android:paddingBottom="7dp"
+            app:cardUseCompatPadding="true">
+
+            <TextView
                 android:id="@+id/tv_header_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/test_home" />
+
+                android:text="主页"
+                android:letterSpacing="0.1"
+                android:textSize="17sp"
+                android:layout_marginTop="17dp"/>
         </android.support.v7.widget.Toolbar>
+        </android.support.v7.widget.CardView>
 
     </io.codetail.widget.RevealFrameLayout>
 
@@ -47,7 +66,8 @@
         android:scrollbarThumbVertical="@android:color/transparent"
         android:layout_width="80dp"
         android:layout_height="match_parent"
-        android:layout_gravity="start|bottom">
+        android:layout_gravity="start|bottom"
+        android:layout_marginTop="20dp">
 
         <LinearLayout
             android:id="@+id/left_drawer"

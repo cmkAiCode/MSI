@@ -5,10 +5,12 @@
         android:layout_height="match_parent"
         android:id="@+id/container"
         xmlns:android="http://schemas.android.com/apk/res/android">
-        <TextView
+        <ImageView
+            android:scaleType="fitXY"
+            android:id="@+id/image_content"
+            android:src="@drawable/content_films"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="asdfadsf"/>
+            android:layout_height="match_parent"/>
     </LinearLayout>
 </FrameLayout>
 

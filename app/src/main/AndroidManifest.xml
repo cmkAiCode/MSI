@@ -2,27 +2,38 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cn.fanrunqi.materiallogin">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity">
+
+        <!--欢迎界面-->
+        <activity android:name=".Start_Interface"
+            android:theme="@style/AppTheme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"></activity>
          <!--注册页面-->
         <activity
             android:name=".RegisterActivity"
             android:theme="@style/Translucent" />
         <activity android:name=".LoginSuccessActivity" />
-        <!--学生首页-->
-        <activity android:name=".stu.Stu_MainActivity"
-            android:theme="@style/Stu_main"/>
+        <!-- 学生首页 -->
+        <activity
+            android:name=".stu.Stu_MainActivity"
+            android:theme="@style/Stu_main" />
+        <activity android:name=".FindpwdActivity"></activity>
     </application>
 
 </manifest>

@@ -44,7 +44,7 @@ public class HttpUtil {
      * @param context 上下文
      * @return true/false
      */
-    public static boolean isNetworkConnected(Context context) throws Exception{
+    public static boolean isNetworkConnected(Context context){
         if(context != null) {
             ConnectivityManager mConnectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
             NetworkInfo mNetworkInfo = mConnectivityManager.getActiveNetworkInfo();

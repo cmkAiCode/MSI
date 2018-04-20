@@ -41,24 +41,21 @@ public class Stu_MainActivity extends AppCompatActivity implements ViewAnimator.
     private ViewAnimator viewAnimator;
     private LinearLayout linearLayout;
     View view;
-    private final String TAG_HOME = "home";
-    private final String TAG_CLOSE = "close";
-    private final String TAG_NOTIFICATIONS = "notifications";
-    private final String TAG_SETTINGS = "settings";
-    private final String TAG_ABOUT = "about";
+    private final String TAG_ME = "mine";
+    private final String TAG_TIMETABLE = "timetable";
+    private final String TAG_SCORE = "score";
+    private final String TAG_NOTICE = "notice";
+    private final String TAG_DIARY = "diary";
+    private final String TAG_EXIT = "exit";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-
-//        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
-//        Transition slide_right = TransitionInflater.from(this).inflateTransition(android.R.transition.slide_right);
-//        getWindow().setEnterTransition(slide_right);
-
         setContentView(R.layout.stu_main);
-        overridePendingTransition(R.anim.right_to_current,R.anim.current_stay_translate);
 
-        findViewById(R.id.toolbarback).getBackground().setAlpha(80);//0~255透明度值 ，0为完全
+        findViewById(R.id.toolbarback).getBackground().setAlpha(65);//0~255透明度值 ，0为完全
         Test_fragment fragmentOne = Test_fragment.newInstance();
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.content_frame, fragmentOne)
@@ -81,16 +78,18 @@ public class Stu_MainActivity extends AppCompatActivity implements ViewAnimator.
     }
     //侧边栏   功能条
     private void createMenuList() {
-        SlideMenuItem menuItem = new SlideMenuItem(TAG_CLOSE, R.drawable.test_home);
+        SlideMenuItem menuItem = new SlideMenuItem(TAG_ME, R.drawable.ic_me);
         list.add(menuItem);
-        SlideMenuItem menuItem1 = new SlideMenuItem(TAG_HOME, R.drawable.test_home);
+        SlideMenuItem menuItem1 = new SlideMenuItem(TAG_TIMETABLE, R.drawable.ic_timetable);
         list.add(menuItem1);
-        SlideMenuItem menuItem2 = new SlideMenuItem(TAG_NOTIFICATIONS, R.drawable.test_home);
+        SlideMenuItem menuItem2 = new SlideMenuItem(TAG_SCORE, R.drawable.ic_score2);
         list.add(menuItem2);
-        SlideMenuItem menuItem3 = new SlideMenuItem(TAG_SETTINGS, R  .drawable.test_home);
+        SlideMenuItem menuItem3 = new SlideMenuItem(TAG_NOTICE, R.drawable.ic_notice4);
         list.add(menuItem3);
-        SlideMenuItem menuItem4 = new SlideMenuItem(TAG_ABOUT, R.drawable.test_home);
+        SlideMenuItem menuItem4 = new SlideMenuItem(TAG_DIARY, R.drawable.ic_diary3);
         list.add(menuItem4);
+        SlideMenuItem menuItem5 = new SlideMenuItem(TAG_EXIT, R.drawable.ic_exit);
+        list.add(menuItem5);
     }
 
     //设置ToolBar
@@ -185,19 +184,27 @@ public class Stu_MainActivity extends AppCompatActivity implements ViewAnimator.
         animator.start();
         Fragment fragment = null;
         switch (slideMenuItem.getName()){
-            case TAG_HOME:
+            case TAG_ME:
                 fragment  = Test_fragment.newInstance();
                 getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment ).commit();
                 return (ScreenShotable) fragment;
-            case TAG_NOTIFICATIONS:
+            case TAG_TIMETABLE:
                 fragment = Test_fragment .newInstance();
                 getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment ).commit();
                 return (ScreenShotable) fragment;
-            case TAG_SETTINGS:
+            case TAG_SCORE:
                 fragment= Test_fragment .newInstance();
                 getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment ).commit();
                 return (ScreenShotable) fragment;
-            case TAG_ABOUT:
+            case TAG_NOTICE:
+                fragment = Test_fragment.newInstance();
+                getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).commit();
+                return (ScreenShotable) fragment;
+            case TAG_DIARY:
+                fragment = Test_fragment.newInstance();
+                getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).commit();
+                return (ScreenShotable) fragment;
+            case TAG_EXIT:
                 fragment = Test_fragment.newInstance();
                 getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).commit();
                 return (ScreenShotable) fragment;

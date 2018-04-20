@@ -10,6 +10,5 @@
         android:icon="@drawable/test_home"
         android:orderInCategory="100"
         android:title="主页"
-
         app:showAsAction="always" />
 </menu>

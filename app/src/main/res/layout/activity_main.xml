@@ -67,6 +67,7 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/selector_bg_edit"
                         android:hint="@string/Username"
+                        android:maxLength="11"
                         android:inputType="textPersonName"
                         android:paddingBottom="2dp"
                         android:textColor="#2fa881"
@@ -93,6 +94,7 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/selector_bg_edit"
                         android:hint="@string/Password"
+                        android:maxLength="15"
                         android:inputType="textPassword"
                         android:paddingBottom="5dp"
                         android:textColor="#2fa881"
@@ -118,6 +120,7 @@
             </RelativeLayout>
 
             <TextView
+                android:id="@+id/findpwd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

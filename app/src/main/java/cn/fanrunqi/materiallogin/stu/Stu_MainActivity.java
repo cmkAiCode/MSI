@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +35,12 @@ import yalantis.com.sidemenu.util.ViewAnimator;
  */
 public class Stu_MainActivity extends AppCompatActivity implements ViewAnimator.ViewAnimatorListener{
 
+
+    final int SERVER_WRONG = -1;//服务器错误
+    final int STATE_PASSWORDWORNG = 0;//密码错误
+    final int STATE_NOID = 1;//没有该学号或工号
+    final int STATE_TELEXITS = 2;//手机号已被注册
+    final int STATE_IDEXITS = 3;//学号或工号已被注册
 
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
@@ -53,7 +60,13 @@ public class Stu_MainActivity extends AppCompatActivity implements ViewAnimator.
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
+//        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
+//        Transition slide_right = TransitionInflater.from(this).inflateTransition(android.R.transition.slide_right);
+//        getWindow().setEnterTransition(slide_right);
+
         setContentView(R.layout.stu_main);
+        overridePendingTransition(R.anim.right_to_current,R.anim.current_stay_translate);
 
         findViewById(R.id.toolbarback).getBackground().setAlpha(65);//0~255透明度值 ，0为完全
         Test_fragment fragmentOne = Test_fragment.newInstance();
@@ -193,7 +206,7 @@ public class Stu_MainActivity extends AppCompatActivity implements ViewAnimator.
                 getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment ).commit();
                 return (ScreenShotable) fragment;
             case TAG_SCORE:
-                fragment= Test_fragment .newInstance();
+                fragment = Test_fragment .newInstance();
                 getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment ).commit();
                 return (ScreenShotable) fragment;
             case TAG_NOTICE:

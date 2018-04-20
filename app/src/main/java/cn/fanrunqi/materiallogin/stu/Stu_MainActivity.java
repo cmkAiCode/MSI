@@ -202,11 +202,11 @@ public class Stu_MainActivity extends AppCompatActivity implements ViewAnimator.
                 getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment ).commit();
                 return (ScreenShotable) fragment;
             case TAG_TIMETABLE:
-                fragment = Stu_Score.newInstance();
+                fragment = Test_fragment.newInstance();
                 getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment ).commit();
                 return (ScreenShotable) fragment;
             case TAG_SCORE:
-                fragment = Test_fragment .newInstance();
+                fragment = Stu_Score.newInstance();
                 getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment ).commit();
                 return (ScreenShotable) fragment;
             case TAG_NOTICE:

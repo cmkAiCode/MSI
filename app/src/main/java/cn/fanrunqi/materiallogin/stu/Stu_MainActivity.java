@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -164,6 +165,9 @@ public class Stu_MainActivity extends AppCompatActivity implements ViewAnimator.
         switch (slideMenuItem.getName()) {
             case "close":
                 return screenShotable;
+            case "notifications":
+                replaceFragment(slideMenuItem,screenShotable,position);
+                return screenShotable;
             default:
                 return replaceFragment(slideMenuItem,screenShotable, position);
 
@@ -185,7 +189,7 @@ public class Stu_MainActivity extends AppCompatActivity implements ViewAnimator.
                 getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment ).commit();
                 return (ScreenShotable) fragment;
             case TAG_NOTIFICATIONS:
-                fragment = Test_fragment .newInstance();
+                fragment = Stu_Score.newInstance();
                 getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment ).commit();
                 return (ScreenShotable) fragment;
             case TAG_SETTINGS:

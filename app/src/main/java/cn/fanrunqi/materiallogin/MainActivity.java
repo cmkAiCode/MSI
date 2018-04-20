@@ -94,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         etUsername = findViewById(R.id.et_username);
         etPassword = findViewById(R.id.et_password);
+        tv_findPWD = findViewById(R.id.findpwd);
         //测试用
         etUsername.setText("15823184588");
         etPassword.setText("123456");

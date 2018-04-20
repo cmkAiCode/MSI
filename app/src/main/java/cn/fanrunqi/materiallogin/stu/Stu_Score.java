@@ -46,6 +46,7 @@ public class Stu_Score extends Fragment implements ScreenShotable{
         @Override
         public boolean handleMessage(Message msg) {
             // TODO Auto-generated method stub
+            //dfa
             String xueqi = "";
             switch (msg.what){
                 case 0:

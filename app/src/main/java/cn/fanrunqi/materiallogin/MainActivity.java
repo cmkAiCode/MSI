@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
         btGo = findViewById(R.id.bt_go);//登录
         cv = findViewById(R.id.cv);
         fab = findViewById(R.id.fab);
-        tv_findPWD = findViewById(R.id.tv_findPWD);
+        cv.getBackground().setAlpha(10);//0~255透明度值 ，0为完全
     }
 
 

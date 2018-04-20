@@ -5,6 +5,7 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="lightGreen">#2fa881</color>
-    <color name="background">#1e2336</color>
-    <color name="toolbar_color">#2f354a</color>
+
+    <color name="background">#001e2336</color>
+    <color name="toolbar_color">#0a311450</color>
 </resources>

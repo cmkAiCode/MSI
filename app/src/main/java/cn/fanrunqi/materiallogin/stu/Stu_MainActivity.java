@@ -66,7 +66,6 @@ public class Stu_MainActivity extends AppCompatActivity implements ViewAnimator.
 //        getWindow().setEnterTransition(slide_right);
 
         setContentView(R.layout.stu_main);
-        overridePendingTransition(R.anim.right_to_current,R.anim.current_stay_translate);
 
         findViewById(R.id.toolbarback).getBackground().setAlpha(65);//0~255透明度值 ，0为完全
         Test_fragment fragmentOne = Test_fragment.newInstance();

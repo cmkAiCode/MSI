@@ -35,6 +35,7 @@ import yalantis.com.sidemenu.interfaces.ScreenShotable;
  * A simple {@link Fragment} subclass.
  */
 public class Stu_Score extends Fragment implements ScreenShotable{
+    private static final String TAG = "Fragment->Stu_Score:";
     private View Fragmentone_view;
     private Bitmap bitmap;
     private List<String> data_list= new ArrayList<String>();
@@ -149,7 +150,17 @@ public class Stu_Score extends Fragment implements ScreenShotable{
 
     @Override
     public void takeScreenShot() {
-        Thread thread = new Thread() {
+//        Thread thread = new Thread() {
+//            @Override
+//            public void run() {
+//                Bitmap bitmap = Bitmap.createBitmap(Fragmentone_view.getWidth(),
+//                        Fragmentone_view.getHeight(), Bitmap.Config.ARGB_8888);
+//                Canvas canvas = new Canvas(bitmap);
+//                Fragmentone_view.draw(canvas);
+//                Stu_Score.this.bitmap = bitmap;
+//            }
+//        };
+        getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 Bitmap bitmap = Bitmap.createBitmap(Fragmentone_view.getWidth(),
@@ -158,15 +169,15 @@ public class Stu_Score extends Fragment implements ScreenShotable{
                 Fragmentone_view.draw(canvas);
                 Stu_Score.this.bitmap = bitmap;
             }
-        };
-
-        thread.start();
+        });
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         this.Fragmentone_view = view.findViewById(R.id.container);
+        boolean flag = Fragmentone_view == null ? false  : true;
+        Log.d(TAG, ""+flag);
     }
     @Override
     public Bitmap getBitmap() {

@@ -62,13 +62,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case STATE_STUDENT://学生登录
                     LoginInfo.loginInfo = new LoginInfo(etUsername.getText().toString().trim(),etPassword.getText().toString().trim());
-                    Explode explode = new Explode();
-                    explode.setDuration(500);
-                    getWindow().setExitTransition(explode);
-                    getWindow().setEnterTransition(explode);
-                    ActivityOptionsCompat oc2 = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this);
+
                     Intent i2 = new Intent(MainActivity.this,Stu_MainActivity.class);
-                    startActivity(i2, oc2.toBundle());
+                    startActivity(i2);
                     break;
                 case STATE_TEACHER://教师登录
                     break;
@@ -134,13 +130,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
             //validate();
-                Explode explode = new Explode();
-                explode.setDuration(500);
-                getWindow().setExitTransition(explode);
-                getWindow().setEnterTransition(explode);
-                ActivityOptionsCompat oc2 = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this);
                 Intent i2 = new Intent(MainActivity.this,Stu_MainActivity.class);
-                startActivity(i2, oc2.toBundle());
+                startActivity(i2);
             }
         });
 

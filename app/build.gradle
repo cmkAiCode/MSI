@@ -42,4 +42,12 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
     compile 'com.weiwangcn.betterspinner:library:1.1.0'
     compile 'com.github.sd6352051:NiftyDialogEffects:v1.0.3'
+    compile 'com.kelin.scrollablepanel:library:1.2.0'
+
+    //郭晨晨添加
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    compile 'com.github.dongjunkun:DropDownMenu:1.0.4'
+    //课表库
+    //compile 'cn.zhouchaoyuan:excelpanel:1.0.4'
 }

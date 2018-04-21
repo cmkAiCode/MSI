@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.transition.Transition;
 import android.transition.TransitionInflater;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -209,7 +210,7 @@ public class Stu_MainActivity extends AppCompatActivity implements ViewAnimator.
                 getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment ).commit();
                 return (ScreenShotable) fragment;
             case TAG_NOTICE:
-                fragment = Test_fragment.newInstance();
+                fragment = Stu_Schedule.newInstance();
                 getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).commit();
                 return (ScreenShotable) fragment;
             case TAG_DIARY:
